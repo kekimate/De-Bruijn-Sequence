@@ -3,12 +3,12 @@ n = int(input())
 k = 2
 
 a = [0] * (k * n)
-sequence = []
+tomb = []
 
 def db(t, p):
     if t > n:
         if n % p == 0:
-            sequence.extend(a[1:p+1])
+            tomb.extend(a[1:p+1])
     else:
         a[t] = a[t-p]
         db(t+1, p)
@@ -18,5 +18,5 @@ def db(t, p):
 
 db(1, 1)
 
-res = "".join(str(x) for x in sequence) + "0" * (n-1)
+res = "".join(str(x) for x in tomb) + "0" * (n-1)
 print(res)
